@@ -17,7 +17,7 @@ class TXMLParser : public TXMLEngine {
         ~TXMLParser(){};
 
         void                selectMainNode();
-        void                selectNode(TString node_name);
+        XMLDocPointer_t     selectNode(TString node_name);
         void                selectNextNode(TString node_name);
         XMLDocPointer_t     getNode(TString node_name);
         TString             getNodeContent(TString node_name);

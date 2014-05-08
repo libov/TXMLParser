@@ -26,8 +26,9 @@ void TXMLParser::selectMainNode() {
     fCurrentNode = fMainNode;
 }
 
-void TXMLParser::selectNode(TString node_name) {
+XMLDocPointer_t TXMLParser::selectNode(TString node_name) {
     fCurrentNode = getNode(node_name);
+    return fCurrentNode;
 }
 
 void TXMLParser::selectNextNode(TString node_name) {
@@ -61,7 +62,8 @@ XMLDocPointer_t   TXMLParser::getNode(TString node_name) {
 TString TXMLParser::getNodeContent(TString node_name) {
 
     XMLNodePointer_t child = getNode(node_name);
-    TString content = GetNodeContent(child);
+    TString content = "";
+    if (child) content = GetNodeContent(child);
 
     return content;
 }
