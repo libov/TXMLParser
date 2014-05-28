@@ -24,8 +24,11 @@ class TXMLParser : public TXMLEngine {
 
         XMLDocPointer_t     getCurrentNode() {return fCurrentNode;}
 
+        XMLDocPointer_t     getDocument() { return fXmldoc; }
+
     private:
 
+        XMLDocPointer_t     fXmldoc;
         XMLDocPointer_t     fMainNode;
         XMLDocPointer_t     fCurrentNode;
 };

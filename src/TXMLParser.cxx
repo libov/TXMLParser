@@ -11,14 +11,14 @@ using namespace std;
 TXMLParser::TXMLParser(TString filename):
 TXMLEngine()
 {
-    XMLDocPointer_t xmldoc = ParseFile(filename);
-    if (xmldoc==0) {
+    fXmldoc = ParseFile(filename);
+    if (fXmldoc==0) {
         cout << "ERROR: could not open XML file" << endl;
         abort();
     }
 
     // take access to main node
-    fMainNode = DocGetRootElement(xmldoc);
+    fMainNode = DocGetRootElement(fXmldoc);
     selectMainNode();
 }
 
