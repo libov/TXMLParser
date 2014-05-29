@@ -17,20 +17,20 @@ class TXMLParser : public TXMLEngine {
         ~TXMLParser(){};
 
         void                selectMainNode();
-        XMLDocPointer_t     selectNode(TString node_name);
+        XMLNodePointer_t    selectNode(TString node_name);
         void                selectNextNode(TString node_name);
-        XMLDocPointer_t     getNode(TString node_name);
+        XMLNodePointer_t    getNode(TString node_name);
         TString             getNodeContent(TString node_name);
 
-        XMLDocPointer_t     getCurrentNode() {return fCurrentNode;}
+        XMLNodePointer_t    getCurrentNode() {return fCurrentNode;}
 
-        XMLDocPointer_t     getDocument() { return fXmldoc; }
+        XMLNodePointer_t    getDocument() { return fXmldoc; }
 
     private:
 
         XMLDocPointer_t     fXmldoc;
-        XMLDocPointer_t     fMainNode;
-        XMLDocPointer_t     fCurrentNode;
+        XMLNodePointer_t    fMainNode;
+        XMLNodePointer_t    fCurrentNode;
 };
 
 #endif
