@@ -17,7 +17,7 @@ vpath %.h   $(INC)
 all: libTXMLParser.so
 
 TXMLParser.o: TXMLParser.cxx TXMLParser.h
-	gcc -o $(OBJ)/$@ -c $< -I inc/ $(FLAGS_OBJ)
+	gcc -o $(OBJ)/$@ -c $< -I inc/ $(FLAGS_OBJ) -fPIC
 
 libTXMLParser.so: TXMLParser.o
 	gcc -shared -o $(LIB)/libTXMLParser.so tmp/TXMLParser.o
